@@ -43,3 +43,26 @@
 </body>
 </html>
 
+
+
+
+<?php
+
+require_once('functions.php');
+
+if (isset($_POST["send"])) {
+    $bdd = connect();
+
+    $sql = "INSERT INTO users (`email`, `password`) VALUES (:email, :password);";
+    $sth = $bdd->prepare($sql);
+    $sth->execute([
+        'email'     => $_POST['email'],
+        'password'  => password_hash($_POST['password'], PASSWORD_DEFAULT)
+    ]);
+
+    header('Location: login.php');
+}
+?> 
+
+
+<?php if (isset($msg)) { echo "<div>" . $msg . "</div>"; } ?>

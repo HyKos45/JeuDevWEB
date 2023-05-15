@@ -1,0 +1,1 @@
+presentation du jeu avec les règles et les fonctionnalités 

@@ -7,6 +7,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/nav.css" />
+    <link rel="stylesheet" href="styles/donjonstyle.css" />
+    
+
 </head>
 <body>
     <?php require_once('_nav.php'); ?>
+    
+
+</body>
+</html>
