@@ -1,17 +1,36 @@
+@import url('https://fonts.google.com/specimen/Orbitron');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    
+   
+        font-family: 'Orbitron', sans-serif;
+        font-family: 'Oswald', sans-serif;
+        font-size: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+        background: url(../img/background.jpg) no-repeat; 
+        background-size: cover;
+        background-position: center;
+        backdrop-filter: blur(2px);
+
 }
+img.icon {
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: #fff;
+    height: 135px;
+}
+
+
+
 header {
-    position: fixed;
-    top: 0;
-    left: 0;    
 width: 100%;
 padding: 20px 100px;
 display: flex;
@@ -22,12 +41,14 @@ z-index: 99;
 }
 
 .logo {
+    width: 20%;
+    height: 20%;
+    padding: 0 5%;
+    display: flex;
+    margin-left: -125px;
+    }
+    
 
-font-size: 2em;
-color: white;
-user-select: none;
-
-}
 
 .navigation a{
 position: relative;
@@ -36,6 +57,7 @@ color: white;
 text-decoration: none;
 font-weight: 500;
 margin-left: 40px;
+
 
 }
 
@@ -79,12 +101,62 @@ transition: .5s;
 .navigation .btnLogin-popup:hover {
 background: #fff;
 color: #162938;
-}
+}s
 
 .container {
     width: 80%;
-    margin: auto;
+    margin: auto;}
+
+.table {
+ border-collapse: collapse;
+ min-width: 400px;
+ width: auto;
+ cursor: pointer;
+ margin: 100px auto;
+ border: 1px solid black;
+ border-radius: 15px;
+
+
 }
+.table.img{
+    margin-top: 30px;
+    width: 10%;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+thead tr{
+background-color: #d06a12;
+color: #fff;
+text-align: center;
+font-size: larger;
+
+}
+
+th, td {
+padding: 15px 20px;
+
+}
+
+tbody td{
+font-size: x-large;
+text-align: center;
+color: white;
+}
+
+tbody tr, td, th{
+border: 1px solid #ddd;
+
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
+
+
+
 
 .row {
     display: flex;
@@ -94,13 +166,15 @@ color: #162938;
     width: 50%;
 }
 
-.table {
-    width: 100%;
-    margin-top: 20px;
-}
+
+
+
 
 h1 {
-    margin: 20px 0;
+    font-size: 50px;
+    padding: 30px;
+    margin: auto ;
+    color: #fff;
 }
 
 h2 {
@@ -136,7 +210,9 @@ h2 {
 }
 
 .btn-green {
-    background: #91d291;
+    padding: 10px 20px;
+
+    background: #567c7f;
     color: white;
 }
 
@@ -167,6 +243,7 @@ h2 {
 
 .px-4 {
     padding: 0 2rem;
+    
 }
 
 .w-60 {
@@ -188,7 +265,7 @@ h2 {
 .health-bar {
     width: 200px;
     height: 20px;
-    border: 1px solid #000;
+    border: 1px solid #ffffff;
     position: relative;
   }
   
@@ -216,6 +293,8 @@ h2 {
   .health-bar-progress.empty {
     background-color: #be1d1d;
   }
+
+  
   
   
   

@@ -1,13 +1,28 @@
-@import url(https://fonts.google.com/specimen/Montserrat);
+@import url('https://fonts.google.com/specimen/Orbitron');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
 body {
-font-family: Montserrat;
-font-size: 100%;
-font-size: 16px;
-line-height: 1.5;
+   
+        font-family: 'Orbitron', sans-serif;
+        font-family: 'Oswald', sans-serif;
+        font-size: 100%;
+        font-size: 16px;
+        line-height: 1.5;
+    background: url(../img/galaxy.jpg);
+    background-size: cover;
+    background-position: center;
 }
 .site-container {
+    
+    padding-top: 150px;
     margin: 2rem auto;
-    max-width: calc(100%-80px);
+    width: 70%;
 }
 .article-container {
     display: flex;
@@ -72,4 +87,10 @@ cursor: pointer;
         max-width: 1156px;
     }
     
+}
+
+.image {
+    padding-right: 100px;
+    width: 60%;
+
 }
