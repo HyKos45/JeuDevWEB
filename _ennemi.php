@@ -6,7 +6,7 @@
     <b>XP:</b> <?php echo $_SESSION['fight']['ennemi']->xp; ?>
 </div>
 <div>
-    <b>Or:</b> <?php echo $_SESSION['fight']['ennemi']->gold; ?>
+    <b>Or:</b> <?php echo $_SESSION['fight']['ennemi']->cristal; ?>
 </div>
 <div>
     <b>Force:</b> <?php echo $_SESSION['fight']['ennemi']->power; ?>

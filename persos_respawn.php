@@ -22,11 +22,11 @@
 
     $perso = $sth->fetch();
 
-    $sql = "UPDATE persos SET `gold` = :gold, `pdv` = :pdv WHERE id = :id AND user_id = :user_id;";    
+    $sql = "UPDATE persos SET `cristal` = :cristal, `pdv` = :pdv WHERE id = :id AND user_id = :user_id;";    
     $sth = $bdd->prepare($sql);
 
     $sth->execute([
-        'gold'      => ($perso['gold']/2),
+        'cristal'      => ($perso['cristal']/2),
         'pdv'       => 20,
         'id'        => $perso['id'],
         'user_id'   => $_SESSION['user']['id']

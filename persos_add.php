@@ -8,13 +8,14 @@
         if ($_POST['name'] != "") {
             $bdd = connect();
 
-            $sql = "INSERT INTO persos (`name`, `for`, `dex`, `int`, `char`, `vit`, `pdv`, `user_id`)  
-            VALUES (:name, :for, :dex, :int, :char, :vit, :pdv, :user_id);";
+            $sql = "INSERT INTO persos (`name`, `class_icon`, `for`, `dex`, `int`, `char`, `vit`, `pdv`, `user_id`)  
+            VALUES (:name, :class_icon, :for, :dex, :int, :char, :vit, :pdv, :user_id);";
             
             $sth = $bdd->prepare($sql);
         
             $sth->execute([
                 'name'      => $_POST['name'],
+                'class_icon'=> $_POST['class_icon'],
                 'for'       => 10,
                 'dex'       => 10,
                 'int'       => 10,

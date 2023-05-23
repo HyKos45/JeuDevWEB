@@ -12,18 +12,18 @@
 
 
 </head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Oswald:wght@200&display=swap');
+</style>
 <body>
-    <?php require_once('_nav.php'); ?>
+    
+
     <header>
-        <h2 class="logo"> TerraQuest</h2>
+      <img src="img/logo_blanc.png" class="logo">
         <nav class="navigation">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-
-
-
-<button class="btnLogin-popup">Login</button>
+            <a href="login.php">Accueil</a>
+            <a href="rules.php">Règles</a>
+            <a href="selection.php">Index</a>
 </nav>
 </header>

@@ -9,8 +9,19 @@
     <link rel="stylesheet" href="styles/login.css" />
 </head>
 
+<div class="video">
+    <video autoplay loop muted plays-inline>
+    <source src ="img/backvideo.mp4" type="video/mp4"> 
+    </video>    
+</div>
+
+<link rel="stylesheet" href="login.css">
 <body>
 
+<div class="content"> 
+    <h1>Space Quest</h1>
+    <h3>Fight beyond the galaxy</h3>
+</div>
     
 
 <?php
@@ -41,6 +52,7 @@
 ?>
 
 
+<button class="btnLogin-popup">Login</button>
 <div class="wrapper">
     <span class="icon-close"><ion-icon name="close"></ion-icon></span>
     <div class="form-box login">   
@@ -79,7 +91,12 @@
     <div class="form-box register">  
     
         <h2>S'inscrire</h2>
-            <form action="" method="post">                
+            <form action="" method="post">   
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="person"></ion-icon></ion-icon></span>
+                    <input type="text" placeholder="Entrez votre pseudo" name="username" id="username">
+                    <label for="username">Pseudo</label>
+                </div>             
                 <div class="input-box">
                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                     <input type="email" placeholder="Entrez votre email" name="email" id="email">
@@ -92,7 +109,7 @@
                 </div>
 
                 <div class="login-register">
-                    <p>Vous avez déjà un compte ? <a href="login.php" class="login-link"> Se connecter</a></p>
+                    <p>Vous avez déjà un compte ? <a class="login-link"> Se connecter</a></p>
                 </div>
                 <button type="submit" class="btn" name="send" value="Connexion">S'incrire</button>
             </form>

@@ -19,36 +19,36 @@
     // dd($persos);
 
 ?>
-
 <?php require_once('_header.php'); ?>
 
-<div class="container">
+
+<div class="container" style="margin-top:100px">
     <?php if (isset($_GET['msg'])) {
         echo "<div class='alert'>" . $_GET['msg'] . "</div>";
     } ?>
-    <h1>Vos personnages</h1>
-    <a class="btn btn-green" href="persos_add.php">Créer un personnage</a>
-
-    <table class="table">
+    <h1>Vos combattants : </h1>
+    <a class="btn btn-green" href="persos_add.php">Créer un combattant</a>
+    <?php foreach ($persos as $perso) { ?>
+    <table class="table" >
         <thead>
-            <tr>
-                <th width="2%">ID</th>
+        <tr>
+                <th>Classe</th>
                 <th>Nom</th>
-                <th>Expérience</th>
-                <th>Point de vie</th>
+                <th>XP</th>
+                <th>Pdv</th>
                 <th>Force</th>
                 <th>Dextérité</th>
-                <th>charisme</th>
+                <th>Charisme</th>
                 <th>Intelligence</th>
                 <th>Vitesse</th>
-                <th>Or</th>
-                <th width="30%">Action</th>
+                <th>Cristaux</th>
+                <th width="22%">Action</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($persos as $perso) { ?>
+        
                 <tr>
-                    <td><?php echo $perso['id']; ?></td>
+                    <td><img class=icon src="img/<?php echo $perso['class_icon'] ? $perso['class_icon'] : "" ?>"></td>
                     <td><?php echo $perso['name']; ?></td>
                     <td><?php echo $perso['xp']; ?></td>
                     <td><?php echo $perso['pdv']; ?></td>
@@ -57,7 +57,7 @@
                     <td><?php echo $perso['char']; ?></td>
                     <td><?php echo $perso['int']; ?></td>
                     <td><?php echo $perso['vit']; ?></td>
-                    <td><?php echo $perso['gold']; ?></td>
+                    <td><?php echo $perso['cristal']; ?></td>
                     <td align="right">
                         <?php if ($perso['pdv'] > 0) { ?>
                             <a 

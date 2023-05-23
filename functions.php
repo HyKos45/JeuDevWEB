@@ -14,7 +14,7 @@
         $link = new PDO(
             'mysql:dbname=game;host=localhost:3307', 
             'root', 
-            '' 
+            '', 
         );
 
         return $link;

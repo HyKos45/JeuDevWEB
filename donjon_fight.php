@@ -1,7 +1,7 @@
 <?php
 
-    require_once('./classes/Gobelin.php');
-    require_once('./classes/DarkKnight.php');
+    require_once('./classes/tiger.php');
+    require_once('./classes/VerSable.php');
 
     require_once('functions.php');
 
@@ -19,13 +19,14 @@
         $nb = random_int(0,10);
 
         if ($nb <= 8) {
-            $ennemi = new Gobelin();
+            $ennemi = new Tiger();
         } else {
-            $ennemi = new DarkKnight();
+            $ennemi = new VerSable();
         }
 
         $_SESSION['fight']['ennemi'] = $ennemi;
         $_SESSION['fight']['html'][] = "Vous tomber sur un " . $ennemi->name . '.';
+        
     }
 
     // dd($_SESSION['fight']);
@@ -62,9 +63,9 @@
                 $_SESSION['fight']['ennemi']->pol -=  $degat - floor($_SESSION['fight']['ennemi']->constitution/3);
 
                 if ($_SESSION['fight']['ennemi']->pol <= 0) {
-                    $_SESSION['perso']['gold'] += $_SESSION['fight']['ennemi']->gold;
+                    $_SESSION['perso']['cristal'] += $_SESSION['fight']['ennemi']->cristal;
                     $_SESSION['perso']['xp'] += $_SESSION['fight']['ennemi']->xp;
-                    $_SESSION['fight']['html'][] = "<div class='alert'>Vous gagnez " . $_SESSION['fight']['ennemi']->gold . " Or.<br />Vous avez tuez votre ennemi.</div>";
+                    $_SESSION['fight']['html'][] = "<div class='alert'>Vous gagnez " . $_SESSION['fight']['ennemi']->cristal . " Or.<br />Vous avez tuez votre ennemi.</div>";
                 }
             } else {
                 $_SESSION['fight']['html'][] = "Vous ratez votre ennmi.";
@@ -84,9 +85,9 @@
             $_SESSION['fight']['ennemi']->pol -=  $degat - floor($_SESSION['fight']['ennemi']->constitution/3);
 
             if ($_SESSION['fight']['ennemi']->pol <= 0) {
-                $_SESSION['perso']['gold'] += $_SESSION['fight']['ennemi']->gold;
+                $_SESSION['perso']['cristal'] += $_SESSION['fight']['ennemi']->cristal;
                 $_SESSION['perso']['xp'] += $_SESSION['fight']['ennemi']->xp;
-                $_SESSION['fight']['html'][] = "<div class='alert'>Vous gagnez " . $_SESSION['fight']['ennemi']->gold . " Or.<br />Vous avez tuez votre ennemi.</div>";
+                $_SESSION['fight']['html'][] = "<div class='alert'>Vous gagnez " . $_SESSION['fight']['ennemi']->cristal . " Or.<br />Vous avez tuez votre ennemi.</div>";
             } else {
                 $_SESSION['fight']['html'][] = "Votre ennemi attaque";
                 $touche = random_int(0, 20);
@@ -126,11 +127,11 @@
 
     // Sauvegarde de l'état de votre personnage
     $bdd = connect();
-    $sql = "UPDATE persos SET `gold` = :gold, `pdv` = :pdv, `xp` = :xp WHERE id = :id AND user_id = :user_id;";    
+    $sql = "UPDATE persos SET `cristal` = :cristal, `pdv` = :pdv, `xp` = :xp WHERE id = :id AND user_id = :user_id;";    
     $sth = $bdd->prepare($sql);
 
     $sth->execute([
-        'gold'      => $_SESSION['perso']['gold'],
+        'cristal'      => $_SESSION['perso']['cristal'],
         'pdv'       => $_SESSION['perso']['pdv'],
         'xp'        => $_SESSION['perso']['xp'],
         'id'        => $_SESSION['perso']['id'],
@@ -142,14 +143,16 @@
     require_once('_header.php');
     
 ?>
-image
+
+       <link rel="stylesheet" href="styles/footer.css" />
+
     <div class="container">
         <div class="row mt-4">
             
                 <div class="px-4">
                     <?php require_once('_perso.php'); ?>
-                </div>
-                <div class="w-60">
+</div>
+                <div class="footer">
                     <h1>Combat</h1>
                     <?php
 

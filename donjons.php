@@ -23,11 +23,12 @@
     // dd($donjons);
     
 ?>
-<style>
-     
-</style>
-<?php require_once('_header.php');
- ?>
+ 
+   
+  
+    <link rel="stylesheet" href="styles/donjonstyle.css" />
+
+
     <div class="container">
         <?php echo $_SESSION['perso']['name']; ?> (<a href="persos.php">Changer</a>)
                    
@@ -44,7 +45,7 @@
                     </figure> 
                     
                     <div class="article-content">
-                    <div class="card-category">Donjon de niveau <?php echo $donjon['difficulty']; ?></div>
+                    <div class="card-category">Planète de niveau <?php echo $donjon['difficulty']; ?></div>
                     <h3 class="card-title"><?php echo $donjon['name']; ?></h3>
                     <p class="card-description"><?php echo $donjon['description']? $donjon['description'] : "" ?></p></div>
             </article></a>

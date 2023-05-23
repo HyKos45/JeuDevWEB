@@ -11,7 +11,7 @@ echo '</div>';
     ?></h2>
 </div>
 <div>
-    <b>Or:</b> <?php echo $_SESSION['perso']['gold']; ?></h2>
+    <b>Cristaux :</b> <?php echo $_SESSION['perso']['cristal']; ?></h2>
 </div>
 <div>
     <b>Xp:</b> <?php echo $_SESSION['perso']['xp']; ?></h2>

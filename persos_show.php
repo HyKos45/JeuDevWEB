@@ -29,6 +29,10 @@
     <h1>Détails du personnage</h1>
 
     <div>
+        <b>Classe :</b> <img src="img/<?php echo $perso['class_icon'] ? $perso['class_icon'] : "" ?>" ?>
+    </div>
+    
+    <div class="mt-2">
         <b>Nom:</b> <?php echo $perso['name']; ?>
     </div>
     
@@ -57,7 +61,7 @@
     </div>
 
     <div class="mt-2">
-        <b>Or:</b> <?php echo $perso['gold']; ?>
+        <b>Cristaux :</b> <?php echo $perso['cristal']; ?>
     </div>
     
     <div class="mt-4">

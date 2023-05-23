@@ -33,22 +33,21 @@
 ?>
 <style>
     body {
-        background-image: url(img/<?php echo $roomObject->picture; ?>);
+        background-image: url("img/<?php echo $roomObject->picture; ?>");
         background-size: cover;
         background-position: center;
     }
 </style>
+<link rel="stylesheet" href="styles/footer.css" />
+
 <?php require_once('_header.php'); ?>
-    <div 
-        class="container"
-        style="background-color: rgba(255,255,255, 0.2)"
-    >
-        <div class="row mt-4">
+    <div class="container">
+          <div class="row mt-4">
             <div class="px-4">
                 <?php require_once('_perso.php'); ?>
             </div>
-            <div class="">
-                <!--img width="200px" src="img/<?php echo $roomObject->picture; ?>" /-->
+            <div class="footer">
+                
                 <h1><?php echo $roomObject->getName(); ?></h1>
                 <p><?php echo $roomObject->getDescription(); ?></p>
                 <?php echo $roomObject->getHTML(); ?>
