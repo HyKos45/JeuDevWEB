@@ -53,7 +53,7 @@ class Room {
 
             case 'combat':
                 $html .= "<p class='mt-4'><a href='donjon_fight.php?id=". $this->donjon_id ."' class='me-2 btn btn-green'>Combattre</a>";
-                $html .= "<a href='donjon_play.php?id=". $this->donjon_id ."' class='btn btn-blue'>Fuir et continuer l'exploration</a></p>";
+                $html .= "<a href='donjon_play.php?id=". $this->donjon_id ."' class='btn btn-blue'>Continuer l'exploration</a></p>";
                 break;
             
             default:
@@ -72,7 +72,7 @@ class Room {
 
             case 'treasure':
                 $this->or = rand(0, 20);
-                $_SESSION['perso']['gold'] += $this->or;
+                $_SESSION['perso']['cristal'] += $this->or;
                 break;
 
             case 'combat':
